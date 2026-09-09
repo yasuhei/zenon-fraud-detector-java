@@ -20,7 +20,7 @@ public record Transaction(
         if(type ==  null) {
             throw new IllegalArgumentException("type não pode ser nulo.");
         }
-        if(amount <= 0) {
+        if(amount < 0) {
             throw new IllegalArgumentException("o valor não pode ser negativo.");
         }
 
@@ -28,20 +28,20 @@ public record Transaction(
             throw new IllegalArgumentException("O nome nao pode ser nulo.");
         }
 
-        if(oldbalanceOrg <= 0) {
+        if(oldbalanceOrg < 0) {
             throw new IllegalArgumentException("O balanco nao pode ser negativo.");
         }
-        if(newbalanceOrig <= 0) {
+        if(newbalanceOrig < 0) {
             throw new IllegalArgumentException("O balanco nao pode ser negativo.");
         }
 
         if(nameDest == null) {
             throw new IllegalArgumentException("O nome do destinatario nao pode ser nulo.");
         }
-        if(oldbalanceDest <= 0) {
+        if(oldbalanceDest < 0) {
             throw new IllegalArgumentException("O oldBalance nao pode ser negativo.");
         }
-        if(newbalanceDest <= 0) {
+        if(newbalanceDest < 0) {
             throw new IllegalArgumentException("O newBalance nao pode ser negativo.");
         }
 
